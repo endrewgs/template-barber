@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:wght@300;400;700&family=Mrs+Saint+Delafield&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #5a6368;
+  --color-foreground: #ffffff;
+
+  --color-card: #5a6368;
+  --color-card-foreground: #ffffff;
+
+  --color-popover: #111111;
+  --color-popover-foreground: #ffffff;
+
+  --color-primary: #ffffff;
+  --color-primary-foreground: #111111;
+
+  --color-secondary: #111111;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #4a5257;
+  --color-muted-foreground: #aba492;
+
+  --color-accent: #aba492;
+  --color-accent-foreground: #111111;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #777777;
+  --color-input: #777777;
+  --color-ring: #ffffff;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #111111;
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-primary: #ffffff;
+  --color-sidebar-primary-foreground: #111111;
+  --color-sidebar-accent: #292929;
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: #777777;
+  --color-sidebar-ring: #ffffff;
+
+  --font-display: "Mrs Saint Delafield", cursive;
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --radius-lg: 0px;
+  --radius-md: 0px;
+  --radius-sm: 0px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #777777;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #5a6368;
+    --foreground: #ffffff;
+    --card: #5a6368;
+    --card-foreground: #ffffff;
+    --popover: #111111;
+    --popover-foreground: #ffffff;
+    --primary: #ffffff;
+    --primary-foreground: #111111;
+    --secondary: #111111;
+    --secondary-foreground: #ffffff;
+    --muted: #4a5257;
+    --muted-foreground: #aba492;
+    --accent: #aba492;
+    --accent-foreground: #111111;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #777777;
+    --input: #777777;
+    --ring: #ffffff;
+    --radius: 0px;
+    --sidebar-background: #111111;
+    --sidebar-foreground: #ffffff;
+    --sidebar-primary: #ffffff;
+    --sidebar-primary-foreground: #111111;
+    --sidebar-accent: #292929;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #777777;
+    --sidebar-ring: #ffffff;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "EB Garamond", serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+  }
+
+  .font-script {
+    font-family: "Mrs Saint Delafield", cursive;
+  }
+
+  .font-functional {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .btn-primary {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 1rem 2.5rem;
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #ffffff;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #777777;
+    margin: 2rem 0;
+  }
+
+  .nav-link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #aba492;
+  }
+
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .testimonial-text {
+    font-family: "EB Garamond", serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-author {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #aba492;
+  }
+
+  .footer-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+  }
+}
